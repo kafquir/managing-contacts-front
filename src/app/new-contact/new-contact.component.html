@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div *ngIf="mode==1" class="container mt-5">
+            <div class="form-row d-flex mb-3">
+              <div class="form-group col-md-5">
+                <label for="inputFamilyName">Nom :</label>
+                <input type="text" #name="ngModel" class="form-control ng-valid" id="inputFamilyName" placeholder="Family Name" [(ngModel)]="contact.nom" name="nom" required>
+              </div>
+              <div [hidden]="name.valid || name.pristine"
+              class="alert alert-danger">
+              Name is required
+             </div>
+              <div class="form-group offset-md-2 col-md-5">
+                <label for="inputName">Prenom :</label>
+                <input type="text" class="form-control ng-valid" id="inputName" placeholder="Name" [(ngModel)]="contact.prenom" name="prenom" required>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="inputEmail"> Votre Email :</label>
+              <input type="email" class="form-control col-md-6 ng-valid" id="inputEmail" placeholder="Email" [(ngModel)]="contact.email" name="email" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="inputPhone"> Phone :</label>
+              <input type="number" class="form-control col-md-6 mb-5 ng-valid" id="inputPhone" placeholder="Tel" [(ngModel)]="contact.tel" name="tel" required>
+            </div>
+            <button type="submit" class="btn btn-primary ng-valid"  [disabled]="!f.form.valid">Save Now ! </button>
+        </div>
+    </form>
+    <div class="card" *ngIf="mode==2">
+        <div class="card-header mt-2">
+          Details Contact ajouté:
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Name is :</h5>
+          <label for="">{{contact.nom}}</label>
+          <h5 class="card-title mt-3">Family Name is :</h5>
+          <label for="">{{contact.prenom}}</label>
+          <h5 class="card-title mt-3">Email :</h5>
+          <label for="">{{contact.email}}</label>
+          <h5 class="card-title mt-3">Phone Number :</h5>
+          <label for="">{{contact.tel}}</label>
+        </div>
+        <div>
+            <a routerLink="/contacts" class="btn btn-primary mb-3">Go somewhere</a>
+        </div>
+      </div>
+</body>
+</html>

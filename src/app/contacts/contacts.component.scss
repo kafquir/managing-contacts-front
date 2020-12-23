@@ -1,0 +1,38 @@
+.title-table{
+    color: blue;
+    font-family: fantasy;
+    font-size: x-large;
+}
+
+.center{
+    text-align: center;
+}
+
+.form-group-search{
+    background: beige;
+    height: 40ù;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    label{
+        color: black;
+        font-size: larger;
+        font-family: auto;
+    }
+    input{
+        width: 17%;
+        margin-left: 10px;
+        border: groove;
+    }
+
+    button{
+        width: 10%;
+        margin-left: 6px;
+        color: cornflowerblue;
+        font-weight: 800;
+        background: border-box;
+        border: groove;
+    }
+}

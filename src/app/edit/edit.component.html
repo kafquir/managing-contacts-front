@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form >
+        <div  class="container mt-5">
+            <div class="form-row d-flex mb-3">
+              <div class="form-group col-md-5">
+                <label for="inputFamilyName">Nom :</label>
+                <input type="text"  class="form-control ng-valid" id="inputFamilyName" placeholder="Family Name" name="nom" required [(ngModel)]="contact.nom">
+              </div>
+              <div class="form-group offset-md-2 col-md-5">
+                <label for="inputName">Prenom :</label>
+                <input type="text" class="form-control ng-valid" id="inputName" placeholder="Name"  name="prenom" required [(ngModel)]="contact.prenom">
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="inputEmail"> Votre Email :</label>
+              <input type="email" class="form-control col-md-6 ng-valid" id="inputEmail" placeholder="Email"  name="email" required [(ngModel)]="contact.email">
+            </div>
+            <div class="form-group mb-3">
+              <label for="inputPhone"> Phone :</label>
+              <input type="number" class="form-control col-md-6 mb-5 ng-valid" id="inputPhone" placeholder="Tel" name="tel" required [(ngModel)]="contact.tel">
+            </div>
+            <button type="submit" class="btn btn-primary ng-valid"  (click)="editContact()">Edit Now ! </button>
+        </div>
+    </form>
+</body>
+</html>

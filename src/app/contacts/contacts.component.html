@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="card mt-5">
+        <div class="card-header title-table center ">
+            Liste des contacts :
+        </div>
+        <div class="card-body">
+          <h5 class="card-title center ">Searching for a specific contact :</h5>
+          <div class="form-group-search">
+            <label for="motcle">Mot Clé :</label>
+            <input type="text" name="motcle" [(ngModel)]="motcle" >
+            <button >Search</button>
+        </div>
+        <table class="table container card-text center">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor= "let c of allContacts">
+                <td>{{c.id}}</td>
+                <td>{{c.nom}}</td>
+                <td>{{c.prenom}}</td>
+                <td>{{c.email}}</td>
+                <td>
+                    <a  (click)="editContact(c.id)" class="clickable">Edit</a>
+                </td>
+                <td>
+                    <a href="#" (click)="deleteContact(c.id)">Delete</a>
+                </td>
+              </tr>
+             </tbody>
+          </table>
+        </div>
+        <div class="card-footer text-muted center">
+            Current contacts
+          </div>
+      </div>
+</body>
+</html>
